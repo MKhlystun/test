@@ -6,6 +6,7 @@ jobs:
   working_directory: /go/src/github.com/MKhlystun/test
   docker:
    - image: circleci/golang:1.10
+  resource_class: small
   steps:
    - checkout
    - setup_remote_docker

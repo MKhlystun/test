@@ -15,7 +15,8 @@ jobs:
       command: |
        gb="/src/github.com/${CIRCLE_PROJECT_USERNAME}";
        if [ ${CIRCLE_PROJECT_USERNAME} == 'Test' ]; then
-         dr="Test"
+         echo "Docker repo"
+         dr="MKlystun"
        else
          dr=$DOCKER_USER
        fi

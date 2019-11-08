@@ -6,6 +6,6 @@ RUN adduser --gid 10001 --uid 10001 \
 
 COPY bin/main /app/main
 USER app
-PORT 8080
+PORTS 8080
 WORKDIR /app
 ENTRYPOINT /app/main

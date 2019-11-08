@@ -7,7 +7,7 @@ import (
 )
 
 func hello(w http.ResponseWriter, req *http.Request) {
-    time.Sleep(10 * time.Second)
+    time.Sleep(1 * time.Second)
     fmt.Fprintf(w, "hello\n")
 }
 

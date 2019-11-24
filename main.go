@@ -21,6 +21,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
                 </body>
                 </html>`)
                 )
+}
 
 func headers(w http.ResponseWriter, req *http.Request) {
 

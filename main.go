@@ -19,8 +19,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
                 <body>
                 <h1>Hello Web</h1>
                 </body>
-                </html>`)
-                )
+                </html>`))
 }
 
 func headers(w http.ResponseWriter, req *http.Request) {

@@ -8,8 +8,19 @@ import (
 
 func hello(w http.ResponseWriter, req *http.Request) {
     time.Sleep(1 * time.Second)
-    fmt.Fprintf(w, "hello\n")
-}
+    w.Write([]byte(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <title>Hello Web</title>
+                <script src="statics/jquery-1.12.4.min.js"></script>
+                <link href="statics/style.css" rel="stylesheet">
+                </head>
+                <body>
+                <h1>Hello Web</h1>
+                </body>
+                </html>`)
+                )
 
 func headers(w http.ResponseWriter, req *http.Request) {
 

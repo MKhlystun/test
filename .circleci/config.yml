@@ -27,6 +27,13 @@ jobs:
        export DOCKER_REPO="$dr"
        EOF
    - run:
+       name: Build application container
+       command: |
+         go install --ldflags '-extldflags "-static"' github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME};
+         [ ! -e bin ] && mkdir bin;
+         cp "${GOPATH_HEAD}/bin/${CIRCLE_PROJECT_REPONAME}" bin/main;
+         docker build -t ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME} .;
+   - run:
        name: Run application in background
        command: |
            docker run ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME}

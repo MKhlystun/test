@@ -8,6 +8,7 @@ import (
 
 func hello(w http.ResponseWriter, req *http.Request) {
     time.Sleep(1 * time.Second)
+    w.Header().Add("Content-Security-Policy", "default-src 'self';")
     w.Write([]byte(`
                 <!DOCTYPE html>
                 <html>

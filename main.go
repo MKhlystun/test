@@ -10,6 +10,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
     time.Sleep(1 * time.Second)
     w.Header().Add("Content-Security-Policy", "default-src 'self';")
     w.Header().Add("X-XSS-Protection", "1; mode=block")
+    w.Header().Add("X-Content-Type-Options", "nosniff")
     w.Write([]byte(`
                 <!DOCTYPE html>
                 <html>
